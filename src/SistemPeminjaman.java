@@ -23,14 +23,12 @@ public class SistemPeminjaman {
             new Peminjaman(dataMhs[0], dataBuku[1], 4)
     };
 
-
     static void tampilkanMahasiswa() {
         System.out.println("\nDaftar Mahasiswa:");
         for (Mahasiswa m : dataMhs) {
             m.tampilMahasiswa();
         }
     }
-
 
     static void tampilkanBuku() {
         System.out.println("\nDaftar Buku:");
@@ -53,7 +51,6 @@ public class SistemPeminjaman {
         for (int i = 1; i < n; i++) {
             Peminjaman kunci = temp[i];
             int j = i - 1;
-
             while (j >= 0 && temp[j].denda < kunci.denda) {
                 temp[j + 1] = temp[j];
                 j--;
@@ -83,19 +80,19 @@ public class SistemPeminjaman {
 
         int low = 0;
         int high = n - 1;
-        int found = -1; 
+        int found = -1;
 
         while (low <= high) {
-            int mid = (low + high) / 2; 
+            int mid = (low + high) / 2;
             int cmp = temp[mid].mhs.nim.compareTo(nimCari);
 
             if (cmp == 0) {
-                found = mid; 
+                found = mid;
                 break;
             } else if (cmp < 0) {
-                low = mid + 1; 
+                low = mid + 1;
             } else {
-                high = mid - 1; 
+                high = mid - 1;
             }
         }
 
@@ -132,18 +129,10 @@ public class SistemPeminjaman {
             pilihan = sc.nextInt();
 
             switch (pilihan) {
-                case 1:
-                    tampilkanMahasiswa();
-                    break;
-                case 2:
-                    tampilkanBuku();
-                    break;
-                case 3:
-                    tampilkanPeminjaman();
-                    break;
-                case 4:
-                    urutkanBerdasarkanDenda();
-                    break;
+                case 1: tampilkanMahasiswa(); break;
+                case 2: tampilkanBuku(); break;
+                case 3: tampilkanPeminjaman(); break;
+                case 4: urutkanBerdasarkanDenda(); break;
                 case 5:
                     System.out.print("Masukkan NIM: ");
                     String nimInput = sc.next();
