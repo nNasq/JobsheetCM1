@@ -156,7 +156,5 @@ public class SistemPeminjaman {
                     System.out.println("Pilihan tidak valid!");
             }
         } while (pilihan != 0);
-
-        sc.close();
     }
 }
